@@ -120,7 +120,7 @@
             animation: pulse 2s infinite;
         }
 
-        /* Skrin Transisi Bunga Kembang Mangkuk/Merimbun (Macam dalam video TikTok) */
+        /* Skrin Transisi Bunga Kembang */
         #bloom-screen {
             pointer-events: none;
             opacity: 0;
@@ -143,22 +143,39 @@
             opacity: 1;
         }
 
+        /* REKAAN JAMBANGAN BUNGA SEBENAR (Bukan Bola Lagi!) */
         .giant-bouquet-cluster {
-            width: 320px;
-            height: 320px;
-            background: 
-                radial-gradient(circle at 30% 35%, rgba(245, 170, 185, 0.98) 0%, transparent 50%),
-                radial-gradient(circle at 70% 30%, rgba(255, 230, 235, 0.98) 0%, transparent 45%),
-                radial-gradient(circle at 50% 65%, rgba(210, 110, 130, 0.95) 0%, transparent 55%),
-                radial-gradient(circle at 20% 70%, rgba(170, 80, 100, 0.9) 0%, transparent 45%),
-                radial-gradient(circle at 80% 75%, rgba(230, 140, 155, 0.95) 0%, transparent 50%),
-                linear-gradient(135deg, #e892a4 0%, #b85d70 50%, #8c3b4f 100%);
-            border-radius: 45% 55% 50% 50%;
-            box-shadow: 0 0 80px rgba(216, 131, 149, 0.6);
+            width: 220px;
+            height: 220px;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            border-radius: 50% 50% 40% 40%;
+            box-shadow: 0 10px 30px rgba(216, 131, 149, 0.4);
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             animation: pulse-bloom 3s ease-in-out infinite;
+        }
+
+        .bouquet-item {
+            position: absolute;
+            font-size: 32px;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.15));
+        }
+
+        /* Susunan Emoji Bunga Dalam Jambangan */
+        .b1 { top: 15px; left: 60px; font-size: 30px; }
+        .b2 { top: 35px; right: 35px; font-size: 34px; }
+        .b3 { top: 80px; left: 25px; font-size: 32px; }
+        .b4 { top: 75px; right: 25px; font-size: 30px; }
+        .b5 { bottom: 35px; left: 55px; font-size: 36px; }
+        .b6 { top: 50px; left: 85px; font-size: 38px; }
+        .b7 { bottom: 50px; right: 65px; font-size: 32px; }
+        .b-wrap { 
+            position: absolute; 
+            bottom: -15px; 
+            font-size: 45px; 
+            z-index: 5;
         }
 
         /* Skrin Utama Mixtape */
@@ -474,7 +491,16 @@
     <!-- Skrin Transisi Bunga Kembang Merimbun -->
     <div class="screen" id="bloom-screen">
         <div class="flower-bloom-wrapper" id="bloomWrapper">
-            <div class="giant-bouquet-cluster"></div>
+            <div class="giant-bouquet-cluster">
+                <span class="bouquet-item b1">🌸</span>
+                <span class="bouquet-item b2">🌹</span>
+                <span class="bouquet-item b3">🌷</span>
+                <span class="bouquet-item b4">🌺</span>
+                <span class="bouquet-item b5">💐</span>
+                <span class="bouquet-item b6">✨</span>
+                <span class="bouquet-item b7">🌿</span>
+                <span class="b-wrap">🎀</span>
+            </div>
         </div>
     </div>
 
@@ -537,7 +563,14 @@
         <div class="modal-card">
             <button class="close-modal" onclick="closeModal('bouquetModal')">&times;</button>
             <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 10px;">Your Bouquet</h3>
-            <div class="giant-bouquet-cluster" style="width: 110px; height: 110px; margin: 15px auto;"></div>
+            <!-- Jambungan Bunga Dalam Modal -->
+            <div class="giant-bouquet-cluster" style="width: 130px; height: 130px; margin: 15px auto;">
+                <span class="bouquet-item b1" style="font-size: 20px;">🌸</span>
+                <span class="bouquet-item b2" style="font-size: 22px;">🌹</span>
+                <span class="bouquet-item b3" style="font-size: 20px;">🌷</span>
+                <span class="bouquet-item b5" style="font-size: 24px;">💐</span>
+                <span class="b-wrap" style="font-size: 30px; bottom: -8px;">🎀</span>
+            </div>
             <p style="font-size: 11px; color: #6e6053;">A custom romantic floral arrangement.</p>
         </div>
     </div>
