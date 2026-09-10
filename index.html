@@ -140,38 +140,51 @@
             transform: scale(1);
         }
 
-        /* Realistic watercolor flower cluster simulated via CSS layered gradients and shadows */
+        /* Realistic Watercolor Floral Bouquet Cluster */
         .realistic-bouquet {
-            width: 320px;
-            height: 320px;
-            background: radial-gradient(circle at 40% 40%, #f7c5cc 0%, #e293a3 35%, #b85d70 70%, #944252 100%);
-            border-radius: 50%;
-            box-shadow: 0 20px 50px rgba(186, 110, 125, 0.4);
+            width: 340px;
+            height: 340px;
+            background: 
+                radial-gradient(circle at 30% 35%, rgba(245, 180, 195, 0.9) 0%, transparent 45%),
+                radial-gradient(circle at 70% 30%, rgba(255, 235, 240, 0.95) 0%, transparent 40%),
+                radial-gradient(circle at 50% 65%, rgba(210, 120, 140, 0.85) 0%, transparent 50%),
+                radial-gradient(circle at 25% 70%, rgba(180, 90, 110, 0.8) 0%, transparent 40%),
+                radial-gradient(circle at 75% 70%, rgba(230, 150, 165, 0.9) 0%, transparent 45%),
+                linear-gradient(135deg, #e892a4 0%, #b85d70 50%, #8c3b4f 100%);
+            border-radius: 50% 45% 55% 48%;
+            box-shadow: 0 25px 60px rgba(160, 90, 105, 0.45);
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
             animation: float 4s ease-in-out infinite;
         }
 
+        /* Lapisan kelopak bunga bertindih (layered petals illusion) */
         .realistic-bouquet::before {
             content: '';
             position: absolute;
-            width: 280px;
-            height: 280px;
-            background: radial-gradient(circle at 60% 60%, #fff3f5 0%, #f0abb6 40%, transparent 70%);
-            border-radius: 45% 55% 50% 50%;
-            opacity: 0.8;
+            inset: 15px;
+            background: 
+                radial-gradient(circle at 40% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 35%),
+                radial-gradient(circle at 65% 55%, rgba(250, 200, 210, 0.8) 0%, transparent 40%),
+                radial-gradient(circle at 50% 30%, rgba(240, 140, 155, 0.75) 0%, transparent 35%);
+            border-radius: 48% 52% 45% 55%;
+            filter: blur(1px);
         }
 
+        /* Seni artistik tambahan gaya lukisan soft floral */
         .realistic-bouquet::after {
-            content: '🌸 🌹 💐 🌷';
+            content: '🌸  peonies & roses 🌹';
             position: absolute;
-            font-size: 45px;
-            letter-spacing: -10px;
-            opacity: 0.9;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+            bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 13px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+            opacity: 0.85;
         }
 
         #app-screen {
@@ -463,26 +476,6 @@
             background: #445042;
         }
 
-        .bottom-nav {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 1000;
-        }
-
-        .nav-btn {
-            background: #556353;
-            color: white;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 12px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
@@ -594,7 +587,7 @@
         <div class="modal-card">
             <button class="close-modal" onclick="closeModal('bouquetModal')">&times;</button>
             <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 12px;">Your Bouquet</h3>
-            <div style="font-size: 55px; margin: 15px 0;">💐</div>
+            <div class="realistic-bouquet" style="width: 140px; height: 140px; margin: 15px auto;"></div>
             <p style="font-size: 13px; color: #6e6053;">A realistic bouquet of soft pink and white roses, just for you.</p>
         </div>
     </div>
