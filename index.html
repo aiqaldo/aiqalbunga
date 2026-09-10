@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+           <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -57,7 +57,7 @@
             justify-content: center;
             align-items: center;
             z-index: 10;
-            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         #envelope-screen {
@@ -123,6 +123,7 @@
         #bloom-screen {
             pointer-events: none;
             opacity: 0;
+            z-index: 20;
         }
 
         .flower-bloom-container {
@@ -130,7 +131,7 @@
             height: 400px;
             position: relative;
             transform: scale(0);
-            transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -140,19 +141,18 @@
             transform: scale(1);
         }
 
-        /* Realistic Watercolor Floral Bouquet Cluster */
         .realistic-bouquet {
-            width: 340px;
-            height: 340px;
+            width: 300px;
+            height: 300px;
             background: 
-                radial-gradient(circle at 30% 35%, rgba(245, 180, 195, 0.9) 0%, transparent 45%),
+                radial-gradient(circle at 30% 35%, rgba(245, 180, 195, 0.95) 0%, transparent 45%),
                 radial-gradient(circle at 70% 30%, rgba(255, 235, 240, 0.95) 0%, transparent 40%),
-                radial-gradient(circle at 50% 65%, rgba(210, 120, 140, 0.85) 0%, transparent 50%),
-                radial-gradient(circle at 25% 70%, rgba(180, 90, 110, 0.8) 0%, transparent 40%),
+                radial-gradient(circle at 50% 65%, rgba(210, 120, 140, 0.9) 0%, transparent 50%),
+                radial-gradient(circle at 25% 70%, rgba(180, 90, 110, 0.85) 0%, transparent 40%),
                 radial-gradient(circle at 75% 70%, rgba(230, 150, 165, 0.9) 0%, transparent 45%),
                 linear-gradient(135deg, #e892a4 0%, #b85d70 50%, #8c3b4f 100%);
             border-radius: 50% 45% 55% 48%;
-            box-shadow: 0 25px 60px rgba(160, 90, 105, 0.45);
+            box-shadow: 0 20px 50px rgba(160, 90, 105, 0.4);
             position: relative;
             display: flex;
             justify-content: center;
@@ -160,31 +160,16 @@
             animation: float 4s ease-in-out infinite;
         }
 
-        /* Lapisan kelopak bunga bertindih (layered petals illusion) */
-        .realistic-bouquet::before {
-            content: '';
-            position: absolute;
-            inset: 15px;
-            background: 
-                radial-gradient(circle at 40% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 35%),
-                radial-gradient(circle at 65% 55%, rgba(250, 200, 210, 0.8) 0%, transparent 40%),
-                radial-gradient(circle at 50% 30%, rgba(240, 140, 155, 0.75) 0%, transparent 35%);
-            border-radius: 48% 52% 45% 55%;
-            filter: blur(1px);
-        }
-
-        /* Seni artistik tambahan gaya lukisan soft floral */
         .realistic-bouquet::after {
-            content: '🌸  peonies & roses 🌹';
+            content: '🌸 peonies & roses 🌹';
             position: absolute;
-            bottom: 20px;
+            bottom: 25px;
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 13px;
             color: #fff;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
             letter-spacing: 1px;
-            opacity: 0.85;
         }
 
         #app-screen {
@@ -197,21 +182,20 @@
             background: var(--card-bg);
             width: 520px;
             max-width: 90vw;
-            padding: 35px;
+            padding: 30px;
             border-radius: 12px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border-color);
-            position: relative;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 20px;
         }
 
         .card-header {
             grid-column: span 2;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
         .card-header .subtitle {
@@ -223,7 +207,7 @@
 
         .card-header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 26px;
+            font-size: 24px;
             color: #4a3b32;
             margin-top: 4px;
         }
@@ -231,15 +215,14 @@
         .player-section {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .cassette {
             background: #d4ded1;
             border: 2px solid #b5c4b1;
             border-radius: 8px;
-            padding: 12px;
-            position: relative;
+            padding: 10px;
             box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
         }
 
@@ -249,27 +232,25 @@
             font-style: italic;
             font-size: 12px;
             color: #556353;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .cassette-body {
             background: #fff;
             border-radius: 6px;
-            height: 70px;
+            height: 60px;
             display: flex;
             justify-content: space-around;
             align-items: center;
             border: 1px solid #c8d6c5;
-            position: relative;
         }
 
         .reel {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border: 3px solid #556353;
             border-radius: 50%;
             background: #fffbf7;
-            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -281,8 +262,8 @@
 
         .reel::after {
             content: '';
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             background: #556353;
             border-radius: 50%;
         }
@@ -290,7 +271,7 @@
         .playlist {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
         }
 
         .track-item {
@@ -344,7 +325,7 @@
             background: #fbf7f2;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 15px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -355,27 +336,27 @@
             letter-spacing: 1px;
             color: #9c8b7e;
             text-transform: uppercase;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .note-content h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 15px;
-            margin-bottom: 8px;
+            font-size: 14px;
+            margin-bottom: 6px;
             color: #4a3b32;
         }
 
         .note-content p {
-            font-size: 12px;
-            line-height: 1.5;
+            font-size: 11px;
+            line-height: 1.4;
             color: #6e6053;
         }
 
         .signature {
-            margin-top: 15px;
+            margin-top: 10px;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 13px;
+            font-size: 12px;
             color: #556353;
         }
 
@@ -383,7 +364,6 @@
             grid-column: span 2;
             display: flex;
             gap: 10px;
-            margin-top: 5px;
         }
 
         .widget-pill {
@@ -397,11 +377,6 @@
             gap: 6px;
             cursor: pointer;
             color: #7a5c55;
-            transition: background 0.2s;
-        }
-
-        .widget-pill:hover {
-            background: #ebdcd6;
         }
 
         .modal-overlay {
@@ -429,11 +404,10 @@
             background: var(--card-bg);
             padding: 25px;
             border-radius: 12px;
-            width: 320px;
+            width: 300px;
             box-shadow: var(--shadow);
             position: relative;
             text-align: center;
-            animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .close-modal {
@@ -465,15 +439,10 @@
             background: #556353;
             color: white;
             border: none;
-            padding: 8px 18px;
+            padding: 6px 14px;
             border-radius: 6px;
-            font-size: 12px;
+            font-size: 11px;
             cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .finish-btn:hover {
-            background: #445042;
         }
 
         @keyframes float {
@@ -488,12 +457,6 @@
 
         @keyframes spin {
             100% { transform: rotate(360deg); }
-            0% { transform: rotate(0deg); }
-        }
-
-        @keyframes popUp {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
@@ -530,7 +493,7 @@
 
             <div class="player-section">
                 <div class="cassette">
-                    <div class="cassette-label">Songs for you</div>
+                    <div class="cassette-label">Mixtape Vol. 1</div>
                     <div class="cassette-body">
                         <div class="reel" id="reelLeft"></div>
                         <div style="font-size: 16px;">📼</div>
@@ -539,19 +502,19 @@
                 </div>
 
                 <div class="playlist">
-                    <div class="track-item active" onclick="playTrack(0)">
+                    <div class="track-item" id="track-0" onclick="playTrack(0)">
                         <div class="track-info">
                             <span class="num">01</span>
-                            <div class="title">Perfect</div>
-                            <div class="artist">Ed Sheeran</div>
+                            <div class="title">Lofi Chill Vibes</div>
+                            <div class="artist">Background Beat</div>
                         </div>
                         <button class="track-btn" id="btn-0">▶</button>
                     </div>
-                    <div class="track-item" onclick="playTrack(1)">
+                    <div class="track-item" id="track-1" onclick="playTrack(1)">
                         <div class="track-info">
                             <span class="num">02</span>
-                            <div class="title">All of Me</div>
-                            <div class="artist">John Legend</div>
+                            <div class="title">Acoustic Romance</div>
+                            <div class="artist">Soft Melody</div>
                         </div>
                         <button class="track-btn" id="btn-1">▶</button>
                     </div>
@@ -563,7 +526,7 @@
                     <div class="note-header">Liner Note</div>
                     <div class="note-content">
                         <h3>Hey you,</h3>
-                        <p>I made you a mixtape – the cassette kind. Side A is us laughing. Side B is me missing you already.<br><br>Press play.</p>
+                        <p>I made you a mixtape. Press play and enjoy the lovely melody crafted just for you.<br><br>Have a wonderful day!</p>
                     </div>
                 </div>
                 <div class="signature">Special Someone</div>
@@ -574,10 +537,10 @@
                 <div class="widget-pill" onclick="openModal('letterModal')">✉️ A letter for you</div>
             </div>
 
-            <div class="status-display" id="statusText">Press play.</div>
+            <div class="status-display" id="statusText">Press play on a track.</div>
 
             <div class="footer-action">
-                <button class="finish-btn" onclick="resetApp()">FINISH MIXTAPE</button>
+                <button class="finish-btn" onclick="resetApp()">RESTART</button>
             </div>
         </div>
     </div>
@@ -587,8 +550,8 @@
         <div class="modal-card">
             <button class="close-modal" onclick="closeModal('bouquetModal')">&times;</button>
             <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 12px;">Your Bouquet</h3>
-            <div class="realistic-bouquet" style="width: 140px; height: 140px; margin: 15px auto;"></div>
-            <p style="font-size: 13px; color: #6e6053;">A realistic bouquet of soft pink and white roses, just for you.</p>
+            <div class="realistic-bouquet" style="width: 130px; height: 130px; margin: 15px auto;"></div>
+            <p style="font-size: 12px; color: #6e6053;">A custom watercolor bouquet arrangement.</p>
         </div>
     </div>
 
@@ -596,12 +559,20 @@
         <div class="modal-card">
             <button class="close-modal" onclick="closeModal('letterModal')">&times;</button>
             <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 12px;">A Note For You</h3>
-            <p style="font-size: 13px; color: #6e6053; line-height: 1.6;">Thank you for being such a wonderful part of my life. Every song reminds me of our best moments together.</p>
+            <p style="font-size: 12px; color: #6e6053; line-height: 1.5;">Thank you for being such a wonderful part of my life. Every moment is special.</p>
         </div>
     </div>
 
+    <!-- Audio Elements using stable preview sources -->
+    <audio id="audio-0" src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=lofi-study-112191.mp3" preload="auto"></audio>
+    <audio id="audio-1" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c36f5686.mp3?filename=gentle-romantic-ukulele-10752.mp3" preload="auto"></audio>
+
     <script>
-        let currentPlaying = null;
+        let currentPlayingIndex = null;
+        const audios = [
+            document.getElementById('audio-0'),
+            document.getElementById('audio-1')
+        ];
 
         function openEnvelope() {
             const flap = document.getElementById('envelopeFlap');
@@ -623,8 +594,8 @@
                         appScreen.style.opacity = '1';
                         appScreen.style.pointerEvents = 'auto';
                         document.getElementById('bgPattern').style.opacity = '0.35';
-                    }, 500);
-                }, 1800);
+                    }, 400);
+                }, 1600);
             }, 500);
         }
 
@@ -635,24 +606,36 @@
             const reelRight = document.getElementById('reelRight');
             const statusText = document.getElementById('statusText');
 
-            tracks.forEach(t => t.classList.remove('active'));
-            btns.forEach(b => b.innerHTML = '▶');
-
-            if (currentPlaying === index) {
-                currentPlaying = null;
+            // If same track is playing, pause it
+            if (currentPlayingIndex === index) {
+                audios[index].pause();
+                currentPlayingIndex = null;
+                tracks[index].classList.remove('active');
+                btns[index].innerHTML = '▶';
                 reelLeft.classList.remove('spinning');
                 reelRight.classList.remove('spinning');
                 statusText.innerText = 'Paused.';
-            } else {
-                currentPlaying = index;
-                tracks[index].classList.add('active');
-                btns[index].innerHTML = '⏸';
-                reelLeft.classList.add('spinning');
-                reelRight.classList.add('spinning');
-                
-                const songNames = ['Perfect - Ed Sheeran', 'All of Me - John Legend'];
-                statusText.innerText = 'Playing: ' + songNames[index];
+                return;
             }
+
+            // Stop all audio first
+            audios.forEach((audio, idx) => {
+                audio.pause();
+                audio.currentTime = 0;
+                tracks[idx].classList.remove('active');
+                btns[idx].innerHTML = '▶';
+            });
+
+            // Play selected track
+            currentPlayingIndex = index;
+            audios[index].play().catch(e => console.log("Audio play blocked/error:", e));
+            tracks[index].classList.add('active');
+            btns[index].innerHTML = '⏸';
+            reelLeft.classList.add('spinning');
+            reelRight.classList.add('spinning');
+
+            const trackNames = ['Lofi Chill Vibes', 'Acoustic Romance'];
+            statusText.innerText = 'Playing: ' + trackNames[index];
         }
 
         function openModal(modalId) {
